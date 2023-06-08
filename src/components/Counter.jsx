@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { counterActions } from "../store/index";
+import { counterActions } from "../store/counterReducer";
 const Counter = () => {
   const dispatch = useDispatch();
-  const counter = useSelector((state) => state.counter);
-  const isShow = useSelector((state) => state.isShow);
+  const counter = useSelector((state) => state.counter.counter);
+  const isShow = useSelector((state) => state.counter.isShow);
 
   // handling buttons
   const increaseHandler = () => {
@@ -22,7 +22,7 @@ const Counter = () => {
 
   return (
     <section>
-      <h3>Redux Counter</h3>
+      <h3 >Redux Counter</h3>
       {isShow && <h1>{counter}</h1>}
       <hr />
       <div>
